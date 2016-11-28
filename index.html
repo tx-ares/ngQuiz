@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<!-- ng-app is an angular Directive.  A directive is how you tell Angular what you want it to control.  This directive will control the entire app. -->
+<html ng-app="pokemonFacts">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -17,13 +18,22 @@
 					Learn about all the Pokemon below before you decide to take the <strong> POKEMON QUIZ </strong>
 				</h3>
 		</div>
+
+		<div ng-controller="listCtrl">
+			{{2+4}}
+		</div>
 	</div>
 
 	<!-- Dependencies -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- App Scripts -->
     <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/controllers/list.js" type="text/javascript"></script>
+
+
 
 </body>
 
