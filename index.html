@@ -18,9 +18,9 @@
 					Learn about all the Pokemon below before you decide to take the <strong> POKEMON QUIZ </strong>
 				</h3>
 		</div>
-
-		<div ng-controller="listCtrl">
-			{{2+4}}
+		<!-- The controller can use an alias to better identify which variables are being used.  We can do this by using the "as" syntax. -->
+		<div ng-controller="listCtrl as list"> 
+			{{list.dummyData}}
 		</div>
 	</div>
 
