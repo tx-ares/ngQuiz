@@ -19,8 +19,22 @@
 				</h3>
 		</div>
 		<!-- The controller can use an alias to better identify which variables are being used.  We can do this by using the "as" syntax. -->
-		<div ng-controller="listCtrl as list"> 
-			{{list.dummyData}}
+		<div ng-controller="listCtrl as list">
+			 <!-- Using ng-repeat, we can loop over all our data and "repeat" over each iteration. -->
+			<div class="row">
+				<div class="col-sm-6" ng-repeat="pokemon in list.data">
+					<div class="well well-sm">
+						<div class="row">
+							<div class="col-md-6">
+								<img ng-src="{{pokemon.image_url}}" class="img-rounded img-responsive">
+							</div>
+							<div class="col-md-6"><h4>{{pokemon.name}}</h4>
+							<p><strong>Type: {{pokemon.type}}</strong></p></div>
+						</div>
+					</div>
+				</div>
+			</div>
+					
 		</div>
 	</div>
 
