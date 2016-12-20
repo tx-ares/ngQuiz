@@ -8,6 +8,11 @@
 			var vm = this; //view model
 
 			vm.data = pokeData;
+			vm.changeActivePokemon = changeActivePokemon; //This takes whatever selected pokemon by the button and "loads" it into the modal.
+
+			function changeActivePokemon(index) {
+				vm.activePokemon = index;
+			};
 		};
 
 	var pokeData = [
