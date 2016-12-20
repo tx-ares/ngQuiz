@@ -26,7 +26,7 @@
 					<div class="well well-sm">
 						<div class="row">
 							<div class="col-md-6">
-								<img ng-src="{{pokemon.image_url}}" class="img-rounded img-responsive">
+								<img ng-src="{{pokemon.image_url}}" class="img-rounded img-responsive well-image">
 							</div>
 							<div class="col-md-6">
 								<h4>{{pokemon.name}}</h4>
@@ -39,7 +39,11 @@
 								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 								consequat.</strong></p>
 
-								<button class="btn btn-primary pull-right">Learn More</button>
+								<button class="btn btn-primary pull-right" 
+										data-toggle="modal" 
+										data-target="#pokemon-info"
+										ng-click="list.changeActivePokemon(pokemon)">
+										Learn More</button>
 							</div>
 						</div>
 					</div>

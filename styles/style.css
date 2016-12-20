@@ -2,6 +2,7 @@ img {
 	width: 100%;
 }
 
-/* .well {
+.well-image {
+	width:  100%;
 	height: 250px;
-} */
+}
