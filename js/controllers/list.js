@@ -10,9 +10,15 @@
 			vm.data = pokeData;
 			vm.changeActivePokemon = changeActivePokemon; //This takes whatever selected pokemon by the button and "loads" it into the modal.
 			vm.search = "";
+			vm.quizActive = false; //Start our ng-hide property as false to keep our main control div visible until conditions are met to hide it.
+			vm.activateQuiz = activateQuiz;
 
 			function changeActivePokemon(index) {
 				vm.activePokemon = index;
+			};
+
+			function activateQuiz() {
+				vm.quizActive = true;
 			};
 		};
 

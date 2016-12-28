@@ -20,7 +20,7 @@
 				</h3>
 		</div>
 		<!-- The controller can use an alias to better identify which variables are being used.  We can do this by using the "as" syntax. -->
-		<div ng-controller="listCtrl as list">
+		<div ng-controller="listCtrl as list" ng-hide="list.quizActive">
 			 <!-- Using ng-repeat, we can loop over all our data and "repeat" over each iteration. -->
 			<form class="form-inline well well-sm clearfix">
 				<span class="glyphicon glyphicon-search"></span>
@@ -28,6 +28,12 @@
 				placeholder="Search..." 
 				class="form-control" 
 				ng-model="list.search"> <!-- ng-model will take this input value and store it as an property on our controller , listCtrl-->
+				<button 
+					class="btn btn-warning pull-right"
+					ng-click="list.activateQuiz()">
+
+					<strong>Start Quiz</strong>
+				</button>
 			</form>
 			<div class="row">
 				<div class="col-sm-6" ng-repeat="pokemon in list.data | filter:list.search"> <!-- By using pipe character, we can add a filter to the data that is displayed by our ng-repeat.  Remember, ng-repeat essentially is a loop function.  This adds conditions before rendering.  -->
