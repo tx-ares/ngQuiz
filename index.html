@@ -30,7 +30,7 @@
 				ng-model="list.search"> <!-- ng-model will take this input value and store it as an property on our controller , listCtrl-->
 			</form>
 			<div class="row">
-				<div class="col-sm-6" ng-repeat="pokemon in list.data">
+				<div class="col-sm-6" ng-repeat="pokemon in list.data | filter:list.search"> <!-- By using pipe character, we can add a filter to the data that is displayed by our ng-repeat.  Remember, ng-repeat essentially is a loop function.  This adds conditions before rendering.  -->
 					<div class="well well-sm">
 						<div class="row">
 							<div class="col-md-6">
