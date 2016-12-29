@@ -1,10 +1,14 @@
 (function(){
-
 	angular
-		.module("PokemonFacts")
+		.module("pokemonFacts")
 		.controller("quizCtrl", QuizController);
 
-		function QuizController() {
-			var vm = this
+		QuizController.$inject = ['quizMetrics'];
+
+		function QuizController(quizMetrics) {
+			
+			var vm = this;
+
+			vm.quizMetrics = quizMetrics;
 		}
-})
+})();
