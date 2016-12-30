@@ -8,10 +8,10 @@
 
 		function ListController(quizMetrics){ //$scope is an Angular service.  ( Opting NOT to use $scope in this example. )
 			var vm = this; //view model
-			console.log(quizMetrics)
 			vm.quizMetrics = quizMetrics;
 
 			vm.data = pokeData;
+			vm.activePokemon = {};
 			vm.changeActivePokemon = changeActivePokemon; //This takes whatever selected pokemon by the button and "loads" it into the modal.
 			vm.search = "";
 			vm.activateQuiz = activateQuiz;
@@ -21,7 +21,7 @@
 			};
 
 			function activateQuiz() {
-				console.log(quizMetrics.changeState)
+				console.log(quizMetrics.changeState, "<<< quizMetrics")
 				quizMetrics.changeState(true);//Start our ng-hide property as false to keep our main control div visible until conditions are met to hide it.
 
 			};
@@ -43,7 +43,7 @@
 		{
 			name: "Bulbasaur",
 			image_url: "http://img00.deviantart.net/cfad/i/2011/230/1/a/hi_res_bulbasaur_by_elektro_omega-d4707vf.png",
-			type: "Grass"
+			type: "Grass/Poison"
 		},
 
 		{
@@ -55,7 +55,7 @@
 		{
 			name: "Butterfree",
 			image_url: "https://s-media-cache-ak0.pinimg.com/originals/35/8a/2f/358a2f567b3fef829ea9fa7293fa6ae2.png",
-			type: "Bug/Poison",
+			type: "Bug/Poison/Flying",
 		},
 
 		{
