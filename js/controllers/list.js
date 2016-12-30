@@ -7,6 +7,8 @@
 		ListController.$inject = ['quizMetrics'];
 
 		function ListController(quizMetrics){ //$scope is an Angular service.  ( Opting NOT to use $scope in this example. )
+					console.log(quizMetrics, "<< Did we get it? ")
+
 			var vm = this; //view model
 			vm.quizMetrics = quizMetrics;
 
