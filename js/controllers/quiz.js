@@ -1,9 +1,9 @@
 (function(){
 	angular
-		.module("pokemonFacts")
-		.controller("quizCtrl", QuizController);
+		.module("PokemonFacts")
+		.controller("quizCtrl", ['$injector',QuizController]);
 
-		QuizController.$inject = ['quizMetrics'];
+		QuizController.$inject = ['quizMetrics']; //Injecting the outputted quizMetrics object from the quizMetrics factory.
 
 		function QuizController(quizMetrics) {
 			

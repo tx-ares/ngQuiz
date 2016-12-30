@@ -1,8 +1,8 @@
 (function(){
 
 	angular
-		.module("pokemonFacts") //This time we will fetch our module "pokemonFacts"
-		.controller("listCtrl", ListController); // Then we can CHAIN a function once it's fetched.  We're going to set it to the controller "listCtrl" and pass it a function.
+		.module("PokemonFacts") //This time we will fetch our module "pokemonFacts"
+		.controller("listCtrl", ['$injector', ListController]); // Then we can CHAIN a function once it's fetched.  We're going to set it to the controller "listCtrl" and pass it a function.
 
 		ListController.$inject = ['quizMetrics'];
 
@@ -14,7 +14,6 @@
 			vm.data = pokeData;
 			vm.changeActivePokemon = changeActivePokemon; //This takes whatever selected pokemon by the button and "loads" it into the modal.
 			vm.search = "";
-			//vm.quizActive = false; //Start our ng-hide property as false to keep our main control div visible until conditions are met to hide it.
 			vm.activateQuiz = activateQuiz;
 
 			function changeActivePokemon(index) {
@@ -22,7 +21,9 @@
 			};
 
 			function activateQuiz() {
-				vm.quizMetrics.quizActive = true;
+				console.log(quizMetrics.changeState)
+				quizMetrics.changeState(true);//Start our ng-hide property as false to keep our main control div visible until conditions are met to hide it.
+
 			};
 		};
 

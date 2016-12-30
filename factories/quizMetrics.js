@@ -1,6 +1,6 @@
 (function() {
 	angular
-		.module("pokemonFacts")
+		.module("PokemonFacts")
 		.factory("quizMetrics" , QuizMetrics);
 
 		function QuizMetrics(){
@@ -9,11 +9,14 @@
 				changeState: changeState
 			};
 
-			return quizObj;
-
-			function changeState(state){
+		function changeState(state){
 				quizObj.quizActive = state;
 			}
+
+			console.log(quizObj, "<<< quizObj")
+			return quizObj;
+
+			
 		};
 
 })
