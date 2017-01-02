@@ -1,5 +1,5 @@
 (function() {
-	console.log("HEY!")
+	// console.log("HEY!")
 	
 	angular
 		.module("PokemonFacts")
