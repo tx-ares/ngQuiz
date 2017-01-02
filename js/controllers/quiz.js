@@ -6,13 +6,16 @@
 		// .controller("quizCtrl", ['$injector', QuizController]);
 
 
-		QuizController.$inject = ['quizMetrics']; //Injecting the outputted quizMetrics object from the quizMetrics factory.
+		QuizController.$inject = ['quizMetrics', 'DataService']; //Injecting the outputted quizMetrics object from the quizMetrics factory.
 
-		function QuizController(quizMetrics) {
+
+		function QuizController(quizMetrics, DataService) {
 			
 			var vm = this;
 			console.log("check 1 2 inside QuizController")
 
 			vm.quizMetrics = quizMetrics;
 		}
+
+
 })();
