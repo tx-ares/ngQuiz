@@ -1,4 +1,5 @@
 (function() {
+	
 	angular
 		.module("PokemonFacts")
 		.factory("quizMetrics", QuizMetrics);

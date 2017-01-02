@@ -4,7 +4,8 @@
 		.module("PokemonFacts") //This time we will fetch our module "pokemonFacts"
 		.controller("listCtrl", ['$injector', ListController]); // Then we can CHAIN a function once it's fetched.  We're going to set it to the controller "listCtrl" and pass it a function.
 
-		ListController.$inject = ['quizMetrics'];
+		// console.log(ListController.$inject = ['10'], "<<< ListController")
+		ListController.$inject = ['$scope', 'quizMetrics'];
 
 		function ListController(quizMetrics){ //$scope is an Angular service.  ( Opting NOT to use $scope in this example. )
 					console.log(quizMetrics, "<< Did we get it? ")
@@ -20,13 +21,13 @@
 
 			function changeActivePokemon(index) {
 				vm.activePokemon = index;
-			};
+			}
 
 			function activateQuiz() {
 				console.log(quizMetrics.changeState, "<<< quizMetrics")
-				quizMetrics.changeState(true);//Start our ng-hide property as false to keep our main control div visible until conditions are met to hide it.
+				quizMetrics.changeState();//Start our ng-hide property as false to keep our main control div visible until conditions are met to hide it.
 
-			};
+			}
 		};
 
 	var pokeData = [
