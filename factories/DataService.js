@@ -5,6 +5,7 @@
 		.factory("DataService" , DataFactory);
 
 		function DataFactory() {
+			console.log("DataFactory fired!")
 			var dataObj = {
 				pokeData: pokeData,
 				quizQuestions: quizQuestions
@@ -127,4 +128,4 @@
 		}
 
 	]
-})
+})();
