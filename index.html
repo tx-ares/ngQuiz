@@ -87,17 +87,16 @@
 									<button class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
 								</div>
 							</div>
-
-
 						</div>
 					</div>
 				</div>
 			</div>
-			 <!-- List Controller -->	
+
+			</div> <!-- List Controller -->	
 			<div ng-controller="quizCtrl as quiz" ng-show="quiz.quizMetrics.quizActive">
 				<div class="row">
 					<div class="col-xs-8">
-						<h4>Progress: check</h4>
+						<h4>Progress:</h4>
 						<div class="btn-toolbar">
 							<button class="btn"
 									ng-repeat="question in quiz.DataService.quizQuestions"></button>

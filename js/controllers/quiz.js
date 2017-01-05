@@ -4,9 +4,8 @@
 		.module("PokemonFacts")
 		.controller("quizCtrl", QuizController);
 		// .controller("quizCtrl", ['$injector', QuizController]);
-		
-		QuizController.$inject = ['quizMetrics', 'DataService']; //Injecting the outputted quizMetrics object from the quizMetrics factory.
 
+		QuizController.$inject = ['quizMetrics','DataService']; //Injecting the outputted quizMetrics object from the quizMetrics factory.
 
 		function QuizController(quizMetrics, DataService) {
 			

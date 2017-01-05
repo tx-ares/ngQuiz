@@ -6,7 +6,7 @@
 		// .controller("listCtrl", ['$injector', ListController]); // Then we can CHAIN a function once it's fetched.  We're going to set it to the controller "listCtrl" and pass it a function.
 
 		// console.log(ListController.$inject = ['10'], "<<< ListController")
-		ListController.$inject = ['quizMetrics', 'DataService'];
+		ListController.$inject = ['quizMetrics','DataService'];
 
 		function ListController(quizMetrics, DataService){ //$scope is an Angular service.  ( Opting NOT to use $scope in this example. )
 			// console.log(quizMetrics, "<< Did we get it? ")
@@ -28,7 +28,6 @@
 				console.log(quizMetrics.changeState, "<<< quizMetrics")
 				console.log("activateQuiz fired!")
 				quizMetrics.changeState(true);//Start our ng-hide property as false to keep our main control div visible until conditions are met to hide it.
-
 			}
 		};
 

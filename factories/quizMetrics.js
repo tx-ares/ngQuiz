@@ -15,10 +15,8 @@
 			console.log(quizObj, "<<< before return")
 			return quizObj;
 
-			console.log(quizObj, "<<< quizObj after")
-
-
 			function changeState(state){
+				console.log(state, "<< state changed to")
 				console.log("changeState fired!")
 				quizObj.quizActive = state;
 			}
