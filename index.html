@@ -1,128 +1,135 @@
 <!DOCTYPE html>
 <!-- ng-app is an angular Directive.  A directive is how you tell Angular what you want it to control.  This directive will control the entire app. -->
 <html ng-app="PokemonFacts">
+
 <head>
-	<link href="images/squirt.ico" rel="icon" type="image/x-icon" />
+    <link href="images/squirt.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ngQuiz</title>
+    <title>ngQuiz</title>
 </head>
 
 <body>
-
-	<div class="container">
-		<div class="page-header">
-			<h1>Pokemon Quiz</h1>
-				<h3>
+    <div class="container">
+        <div class="page-header">
+            <h1>Pokemon Quiz</h1>
+            <h3>
 					Learn about all the Pokemon below before you decide to take the <strong> POKEMON QUIZ </strong>
 				</h3>
-		</div>
-		<!-- The controller can use an alias to better identify which variables are being used.  We can do this by using the "as" syntax. -->
-		<div ng-controller="listCtrl as list" ng-hide="list.quizMetrics.quizActive">
-			 <!-- Using ng-repeat, we can loop over all our data and "repeat" over each iteration. -->
-			<form class="form-inline well well-sm clearfix">
-				<span class="glyphicon glyphicon-search"></span>
-				<input type="text" 
-				placeholder="Search..." 
-				class="form-control" 
-				ng-model="list.search"> <!-- ng-model will take this input value and store it as an property on our controller , listCtrl-->
-				<button 
-					class="btn btn-warning pull-right"
-					ng-click="list.activateQuiz()">
-
-					<strong>Start Quiz</strong>
-				</button>
-			</form>
-			<div class="row">
-				<div class="col-sm-6" ng-repeat="pokemon in list.data | filter:list.search"> <!-- By using pipe character, we can add a filter to the data that is displayed by our ng-repeat.  Remember, ng-repeat essentially is a loop function.  This adds conditions before rendering.  -->
-					<div class="well well-sm">
-						<div class="row">
-							<div class="col-md-6">
-								<img ng-src="{{pokemon.image_url}}" class="img-rounded img-responsive well-image">
-							</div>
-							<div class="col-md-6">
-								<h4>{{pokemon.name}}</h4>
-								<p><strong>Type: {{pokemon.type}}</strong></p>
-								<p><strong>Avg. Weight: {{pokemon.type}}</strong></p>
-								<p><strong>Avg. Height: {{pokemon.type}}</strong></p>
-								<p><strong>Rarity: {{pokemon.type}}</strong></p>
-								
-								<button class="btn btn-primary pull-right" 
-										data-toggle="modal" 
-										data-target="#pokemon-info"
-										ng-click="list.changeActivePokemon(pokemon)">
-										Learn More</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="modal" id="pokemon-info">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h2>{{list.activePokemon.name}}</h2>
-						</div>
-						<div class="modal-body">
-							<div class="row">
-								<div class="col-xs-8 col-xs-offset-2">
-									<img ng-src="{{list.activePokemon.image_url}}" class="image-rounded img-responsive">
-								</div>	
-							</div>
-							<div class="row top-buffer">
-								<div class="col-md-12">
-									<p><strong>Type: {{list.activePokemon.type}}</strong></p>
-									<p><strong>Avg. Weight: {{list.activePokemon.type}}</strong></p>
-									<p><strong>Avg. Height: {{list.activePokemon.type}}</strong></p>
-									<p><strong>Rarity: {{list.activePokemon.type}}</strong></p>
-								</div>
-								<div class="col-xs-12 top-buffer">
-									<p><strong>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        </div>
+        <!-- The controller can use an alias to better identify which variables are being used.  We can do this by using the "as" syntax. -->
+        <div ng-controller="listCtrl as list" ng-hide="list.quizMetrics.quizActive">
+            <!-- Using ng-repeat, we can loop over all our data and "repeat" over each iteration. -->
+            <form class="form-inline well well-sm clearfix">
+                <span class="glyphicon glyphicon-search"></span>
+                <input type="text" placeholder="Search..." class="form-control" ng-model="list.search">
+                <!-- ng-model will take this input value and store it as an property on our controller , listCtrl-->
+                <button class="btn btn-warning pull-right" ng-click="list.activateQuiz()">
+                    <strong>Start Quiz</strong>
+                </button>
+            </form>
+            <div class="row">
+                <div class="col-sm-6" ng-repeat="pokemon in list.data | filter:list.search">
+                    <!-- By using pipe character, we can add a filter to the data that is displayed by our ng-repeat.  Remember, ng-repeat essentially is a loop function.  This adds conditions before rendering.  -->
+                    <div class="well well-sm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img ng-src="{{pokemon.image_url}}" class="img-rounded img-responsive well-image">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>{{pokemon.name}}</h4>
+                                <p><strong>Type: {{pokemon.type}}</strong></p>
+                                <p><strong>Avg. Weight: {{pokemon.type}}</strong></p>
+                                <p><strong>Avg. Height: {{pokemon.type}}</strong></p>
+                                <p><strong>Rarity: {{pokemon.type}}</strong></p>
+                                <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#pokemon-info" ng-click="list.changeActivePokemon(pokemon)">
+                                    Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="pokemon-info">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>{{list.activePokemon.name}}</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-8 col-xs-offset-2">
+                                    <img ng-src="{{list.activePokemon.image_url}}" class="image-rounded img-responsive">
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="col-md-12">
+                                    <p><strong>Type: {{list.activePokemon.type}}</strong></p>
+                                    <p><strong>Avg. Weight: {{list.activePokemon.type}}</strong></p>
+                                    <p><strong>Avg. Height: {{list.activePokemon.type}}</strong></p>
+                                    <p><strong>Rarity: {{list.activePokemon.type}}</strong></p>
+                                </div>
+                                <div class="col-xs-12 top-buffer">
+                                    <p><strong>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 									consequat.</strong></p>
-									<button class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+                                    <button class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- List Controller -->
+        <div ng-controller="quizCtrl as quiz" ng-show="quiz.quizMetrics.quizActive">
+            <div class="row">
+                <div class="col-xs-8">
+                    <h2>Progress:</h2>
+                    <div class="btn-toolbar">
+                        <!-- ng-class uses property value format like objects.  Where the property is the class and the value is the condition that if returns true will show the class first mentioned.  -->
+                        <button class="btn" ng-repeat="question in quiz.DataService.quizQuestions" ng-class="{'btn-info' : question.selected !== null, 'btn-danger' : question.selected === null}">
+                            <span class="glyphicon" ng-class="{'glyphicon-pencil' : question.selected !== null,
+									  'glyphicon-question-sign' : question.selected === null}">
 
-			</div> <!-- List Controller -->	
-			<div ng-controller="quizCtrl as quiz" ng-show="quiz.quizMetrics.quizActive">
-				<div class="row">
-					<div class="col-xs-8">
-						<h4>Progress:</h4>
-						<div class="btn-toolbar">
-							<button class="btn"
-									ng-repeat="question in quiz.DataService.quizQuestions"></button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-		</div>
-	</div>
-
-	<!-- Dependencies -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
-
-	<!-- App Scripts -->
+								</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="row">
+                        <h4>Legend</h4>
+                        <div class="col-sm-4">
+                            <button class="btn btn-info">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                        </div>
+                        <p>Answered</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <button class="btn btn-danger">
+                            <span class="glyphicon glyphicon-question-sign"></span>
+                        </button>
+                    </div>
+                    <p>Unanswered</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- App Scripts -->
     <script src="js/app.js" type="text/javascript"></script>
     <script src="js/controllers/list.js" type="text/javascript"></script>
     <script src="js/controllers/quiz.js" type="text/javascript"></script>
     <script src="factories/quizMetrics.js" type="text/javascript"></script>
     <script src="factories/DataService.js" type="text/javascript"></script>
-
-<!-- Find out what is wrong with controller -->
-
+    <!-- Find out what is wrong with controller -->
 </body>
 
 </html>
