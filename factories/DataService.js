@@ -10,7 +10,7 @@
 				pokeData: pokeData,
 				quizQuestions: quizQuestions
 			};
-
+			console.log(dataObj, "<<< dataObj!")
 			return dataObj;
 		}
 
