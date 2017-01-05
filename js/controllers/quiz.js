@@ -15,6 +15,7 @@
 			console.log("check 1 2 inside QuizController")
 
 			vm.quizMetrics = quizMetrics;
+			vm.DataService = DataService;
 		}
 
 

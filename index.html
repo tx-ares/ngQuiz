@@ -96,7 +96,15 @@
 				
 
 			<div ng-controller="quizCtrl as quiz" ng-show="quiz.quizMetrics.quizActive">
-				<h1>QUIZ!</h1>
+				<div class="row">
+					<div class="col-xs-8">
+						<h4>Progress:</h4>
+						<div class="btn-toolbar">
+							<button class="btn"
+									ng-repeat="question in quiz.DataService.quizQuestions"></button>
+						</div>
+					</div>
+				</div>
 			</div>
 
 
