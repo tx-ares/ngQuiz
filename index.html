@@ -125,16 +125,18 @@
                         <h4>{{quiz.activeQuestion+1 + ". " + quiz.dataService.quizQuestions[quiz.activeQuestion].text}}</h4>
                         <!-- By accessing dataService, we will pull the quizQuestions object and display only the active question. -->
                         <div class="row">
-                            <div class="col-sm-6" ng-repeat="answer in quiz.dataService.quizQuestions[quiz.activeQuestion].possibilites">{{answer.answer}}
+                            <div class="col-sm-6" ng-repeat="answer in quiz.dataService.quizQuestions[quiz.activeQuestion].possibilites">
+                            <h4 class="answer">{{answer.answer}}
+                            </h4>
                                 
-                            </div>
-                               
+                            </div>  
                         </div>
                         
                     </div>
                 </div>
             </div>
         </div>
+        <button class="btn btn-warning" ng-click="quiz.questionAnswered()">Continue</button>
     </div>
     <!-- Dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
