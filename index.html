@@ -122,7 +122,15 @@
             <div class="well well-sm">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h4>{{quiz.activeQuestion+1 + ". " + quiz.dataService.quizQuestions[quiz.activeQuestion]}}</h4>
+                        <h4>{{quiz.activeQuestion+1 + ". " + quiz.dataService.quizQuestions[quiz.activeQuestion].text}}</h4>
+                        <!-- By accessing dataService, we will pull the quizQuestions object and display only the active question. -->
+                        <div class="row">
+                            <div class="col-sm-6" ng-repeat="answer in quiz.dataService.quizQuestions[quiz.activeQuestion].possibilites">{{answer.answer}}
+                                
+                            </div>
+                               
+                        </div>
+                        
                     </div>
                 </div>
             </div>
