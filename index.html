@@ -100,7 +100,7 @@
                 </div>
                 <div class="col-xs-4">
                     <div class="row">
-                        <h4>Legend</h4>
+                        <h4>Legend:</h4>
                         <div class="col-sm-4">
                             <button class="btn btn-info">
                                 <span class="glyphicon glyphicon-pencil"></span>
@@ -113,7 +113,17 @@
                         </button>
                         <p>Unanswered</p>
                     </div>
-                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>Question:</h3>
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>{{quiz.activeQuestion+1 + ". " + quiz.dataService.quizQuestions[quiz.activeQuestion]}}</h4>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,7 +138,6 @@
     <script src="js/controllers/quiz.js" type="text/javascript"></script>
     <script src="factories/quizMetrics.js" type="text/javascript"></script>
     <script src="factories/DataService.js" type="text/javascript"></script>
-    <!-- Find out what is wrong with controller -->
 </body>
 
 </html>
