@@ -125,7 +125,7 @@
                         <h4>{{quiz.activeQuestion+1 + ". " + quiz.dataService.quizQuestions[quiz.activeQuestion].text}}</h4>
                         <!-- By accessing dataService, we will pull the quizQuestions object and display only the active question. -->
                         <div class="row">
-                            <div class="col-sm-6" ng-repeat="answer in quiz.dataService.quizQuestions[quiz.activeQuestion].possibilites">
+                            <div class="col-sm-6" ng-repeat="answer in quiz.DataService.quizQuestions[quiz.activeQuestion].possibilites">
                             <h4 class="answer">{{answer.answer}}
                             </h4>
                                 
@@ -148,6 +148,7 @@
     <script src="js/controllers/quiz.js" type="text/javascript"></script>
     <script src="factories/quizMetrics.js" type="text/javascript"></script>
     <script src="factories/DataService.js" type="text/javascript"></script>
+    <!-- Rewatch video 11 incase you missed something -->
 </body>
 
 </html>
