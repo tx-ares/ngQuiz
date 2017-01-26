@@ -13,14 +13,39 @@
 			console.log("check 1 2 inside QuizController")
 
 			vm.quizMetrics = quizMetrics;
-			vm.DataService = dataService;
+			vm.DataService = DataService;
 			vm.questionAnswered = questionAnswered;
+			vm.setActiveQuestion = setActiveQuestion;
 			vm.activeQuestion = 0; //By setting this value to 0 we can give the questions a starting place, which will later be able to make the questions clickable and will change current view to selected question.
 		
+			var numQuestionsAnswered = 0;
+
+			function setActiveQuestion(){
+				var breakOut = false; 
+				var quizLength = DataService.quizQuestions.length -1;
+
+				while(!breakOut){
+					vm.activeQuestion = vm.activeQuestion < quizLength?++vm.activeQuestion:0; //Using tertiary operator this check activeQuestion is less than length of quiz.  If yes, increment active question. If not, set activeQuestion to 0.
+				
+					if(DataService.quizQuestions[vm.activeQuestion].selected === null){ // Checks the current active question to see if it's been answered.  If yes, set the activeQuestion to this index. ( finds our next unanswered question! )
+						breakOut = true;
+					}
+				}
+			};
+
 			function questionAnswered(){
 
-				if()
-			}
+				var quizLength = DataService.quizQuestions.length;
+
+				if(DataService.quizQuestions[vm.activeQuestion].selected !== null) {
+					numQuestionsAnswered++;//
+					if(numQuestionsAnswered >= quizLength){ // if we have run out of questions , this function will run.  Which finishes the quiz.
+						//finalize quiz
+					}
+				}
+
+				vm.setActiveQuestion();
+			};
 		}
 
 
