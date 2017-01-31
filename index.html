@@ -129,7 +129,9 @@
                         <div class="row"
                             ng-if="quiz.DataService.quizQuestions[quiz.activeQuestion].type === 'text' ">
                             <div class="col-sm-6" ng-repeat="answer in quiz.DataService.quizQuestions[quiz.activeQuestion].possibilities">
-                                <h4 class="answer">
+                                <h4 class="answer"
+                                    ng-class="{bg-info': $index} === quiz.DataService.quizQuestions[quiz.activeQuestion].selected">
+                                    <!-- bg-info: $index will give us the number of the current iteration in the ng-repeat loop. With this line, we are specifying logic to add the class 'bg-info' IF the currrent index is equal to the 'selected' property of current active question. -->
                                     {{answer.answer}}
                                 </h4>                             
                             </div>  
