@@ -18,7 +18,7 @@
 		{
 			type: "text",
 			text: "What is the average weight of a Pikachu?",
-			possibilites: [
+			possibilities: [
 				{
 					answer: "30lb"
 				},
@@ -36,9 +36,9 @@
 			correct: null
 		},
 		{
-			type: "picture",
+			type: "image",
 			text: "Which pokemon is Lapras?",
-			possibilites: [
+			possibilities: [
 				{
 					answer: "https://2.bp.blogspot.com/-atzUuc_vK_Y/VuYP0hNemgI/AAAAAAAAF8s/3G9YSKC439k3x14QbuWOcvXJVEMxaFZbA/s1600/Squirtle.PNG"
 				},
@@ -58,7 +58,7 @@
 		{
 			type: "text",
 			text: "Where are Charmander commonly found?",
-			possibilites: [
+			possibilities: [
 				{
 					answer: "Seafoam Islands"
 				},
