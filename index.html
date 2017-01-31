@@ -137,9 +137,9 @@
 
                         <div class="row"
                             ng-if="quiz.DataService.quizQuestions[quiz.activeQuestion].type === 'image' ">
-                            <div class="col-sm-6" ng-repeat="answer in quiz.dataService.quizQuestions[quiz.activeQuestion].possibilities">
+                            <div class="col-sm-6" ng-repeat="answer in quiz.DataService.quizQuestions[quiz.activeQuestion].possibilities">
                                 <div class="image-answer">
-                                    <img ng-src="{{answer.answer}}">
+                                    <img ng-src="{{answer.answer}}" />
                                 </div>
                             </div>
                         </div>

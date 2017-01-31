@@ -21,10 +21,10 @@
 	width: 100%;
 	overflow: hidden;
 	border-radius: 10px;
-	margin-bottom: 20p;
+	margin-bottom: 20px;
 }
 
 .image-answer img{
-	width: 100%
 	height: auto;
+	width: 100%;
 }
