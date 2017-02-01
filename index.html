@@ -92,6 +92,7 @@
                         <!-- ng-class uses property value format like objects.  Where the property is the class and the value is the condition that if returns true will show the class first mentioned.  -->
                         <button class="btn" ng-repeat="question in quiz.DataService.quizQuestions" ng-class="{'btn-info' : question.selected !== null, 'btn-danger' : question.selected === null}" 
                         ng-click="quiz.setActiveQuestion($index)">
+                        <!-- In the ng-click we are passing in the index from our current iteration of the ng-repeat. -->
                             <span class="glyphicon" ng-class="{'glyphicon-pencil' : question.selected !== null,
 									  'glyphicon-question-sign' : question.selected === null}">
 
@@ -167,7 +168,7 @@
     <script src="factories/quizMetrics.js" type="text/javascript"></script>
     <script src="factories/DataService.js" type="text/javascript"></script>
 
-    <!-- video 15/24 -->
+    <!-- video 16/24 -->
 </body>
 
 </html>

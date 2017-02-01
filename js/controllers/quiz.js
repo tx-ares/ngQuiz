@@ -34,7 +34,7 @@
 						}
 					}
 				}else{
-					vm.activeQuestion = index
+					vm.activeQuestion = index;
 			};
 
 			function questionAnswered(){
