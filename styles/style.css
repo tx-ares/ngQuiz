@@ -14,7 +14,7 @@
 	cursor: pointer;
 }
 
-/*Images*/
+/*Image Questions / Answers */
 .image-answer {
 	cursor: pointer;
 	height: 350px;
@@ -27,4 +27,10 @@
 .image-answer img{
 	height: auto;
 	width: 100%;
+}
+
+.image-selected {
+	border: 3px solid dodgerblue;
+	box-shadow: 3px 3px 3px 3px solid;
+	transition: 1s all ease;
 }
