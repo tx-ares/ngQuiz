@@ -45,6 +45,7 @@
 					numQuestionsAnswered++;//
 					if(numQuestionsAnswered >= quizLength){ // if we have run out of questions , this function will run.  Which finishes the quiz.
 						//finalize quiz
+						alert("End of the quiz!")
 					}
 				}
 
