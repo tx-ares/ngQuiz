@@ -51,6 +51,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="modal" id="pokemon-info">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -120,6 +122,10 @@
         </div>
 
         <div class="row">
+            <div class="alert alert-danger" 
+                 ng-show="quiz.error"> Slow down there! To be a true Pokemon master you must complete all questions! <!--Normally, we use a true or false here.  But by accessing quiz.error's value we can check what it equals.  By default, it's false.  Check quiz.js for details. -->
+                <button class="close" ng-click="quiz.error = false">&times</button> <!-- ng-click can pass values as well as use callback functions.-->
+            </div>
             <h3>Question:</h3>
             <div class="well well-sm">
                 <div class="row">
@@ -138,7 +144,7 @@
                                     {{answer.answer}}
                                 </h4>                             
                             </div>  
-                        </div>
+                        </div><!--End row-->
 
                         <div class="row"
                             ng-if="quiz.DataService.quizQuestions[quiz.activeQuestion].type === 'image' ">
@@ -149,14 +155,15 @@
                                     <img ng-src="{{answer.answer}}" />
                                 </div>
                             </div>
-                        </div>
+                        </div> <!--End row-->
                         
-                    </div>
+                    </div><!--End col -->
                 </div>
             </div>
         </div>
         <button class="btn btn-warning" ng-click="quiz.questionAnswered()">Continue</button>
-    </div>
+    </div><!--End Main Container-->
+
     <!-- Dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -168,7 +175,7 @@
     <script src="factories/quizMetrics.js" type="text/javascript"></script>
     <script src="factories/DataService.js" type="text/javascript"></script>
 
-    <!-- video 16/24 -->
+    <!-- video 17/24 Figure out why page isn't rendering properly.  May need to rewatch 16-->
 </body>
 
 </html>

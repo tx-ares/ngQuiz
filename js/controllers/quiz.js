@@ -19,6 +19,7 @@
 			vm.activeQuestion = 0; //By setting this value to 0 we can give the questions a starting place, which will later be able to make the questions clickable and will change current view to selected question.
 			vm.selectAnswer = selectAnswer;
 			vm.error = false;
+			vm.finalize = false;
 
 			var numQuestionsAnswered = 0;
 
@@ -28,19 +29,23 @@
 					var quizLength = DataService.quizQuestions.length -1;
 
 					while(!breakOut){
-						vm.activeQuestion = vm.activeQuestion < quizLength?++vm.activeQuestion:0; //Using tertiary operator this check activeQuestion is less than length of quiz.  If yes, increment active question. If not, set activeQuestion to 0.
-					
-						if(vm.activeQuestion === 0){ //This will only run once the active question is set to 0 by way of finishing the quiz.  
-							vm.error = true;
-						}
+							vm.activeQuestion = vm.activeQuestion < quizLength?++vm.activeQuestion:0; //Using tertiary operator this check activeQuestion is less than length of quiz.  If yes, increment active question. If not, set activeQuestion to 0.
+						
+							if(vm.activeQuestion === 0){ //This will only run once the active question is set to 0 by way of finishing the quiz.  
+								vm.error = true;
+							}
 
-						if(DataService.quizQuestions[vm.activeQuestion].selected === null){ // Checks the current active question to see if it's been answered.  If yes, set the activeQuestion to this index. ( finds our next unanswered question! )
-							breakOut = true;
+							if(DataService.quizQuestions[vm.activeQuestion].selected === null){ // Checks the current active question to see if it's been answered.  If yes, set the activeQuestion to this index. ( finds our next unanswered question! )
+								breakOut = true;
+							}
 						}
 					}
-				}else{
+
+					else{
 					vm.activeQuestion = index;
-			};
+					}
+
+			}
 
 			function questionAnswered(){
 
@@ -50,15 +55,25 @@
 					numQuestionsAnswered++;//
 					if(numQuestionsAnswered >= quizLength){ // if we have run out of questions , this function will run.  Which finishes the quiz.
 						//finalize quiz
+						for(var i = 0; i < quizLength; i++){//To make sure all questions are actually answered.
+							if(DataService.quizQuestions[i].selected === null){
+								setActiveQuestion(i);
+								return;	
+							}
+						}
+						vm.error = false;
+						vm.finalize = true;
+						return;
 					}
+				}	
 
 				vm.setActiveQuestion();
-			};
+			}
 
 			function selectAnswer(index){
 				DataService.quizQuestions[vm.activeQuestion].selected = index; //in the html, the ng-click is passing in the index here and here we simply change the 'selected' attribute from null to the current index.
-			};
-		};
+			}
+		}
 
 
 })();
