@@ -16,10 +16,13 @@
 			vm.DataService = DataService;
 			vm.questionAnswered = questionAnswered;
 			vm.setActiveQuestion = setActiveQuestion;
-			vm.activeQuestion = 0; //By setting this value to 0 we can give the questions a starting place, which will later be able to make the questions clickable and will change current view to selected question.
 			vm.selectAnswer = selectAnswer;
+			vm.finalizeAnswers = finalizeAnswers;
+			vm.activeQuestion = 0; //By setting this value to 0 we can give the questions a starting place, which will later be able to make the questions clickable and will change current view to selected question.
+			
 			vm.error = false;
 			vm.finalize = false;
+
 
 			var numQuestionsAnswered = 0;
 
@@ -72,6 +75,14 @@
 
 			function selectAnswer(index){
 				DataService.quizQuestions[vm.activeQuestion].selected = index; //in the html, the ng-click is passing in the index here and here we simply change the 'selected' attribute from null to the current index.
+			}
+
+			function finalizeAnswers(){
+				vm.finalize = false;
+				numQuestionsAnswered = 0;
+				vm.activeQuestion = 0;
+				quizMetrics.markQuiz();
+				quizMetrics.changeState();
 			}
 		}
 
