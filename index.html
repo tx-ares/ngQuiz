@@ -208,7 +208,15 @@
                 <div class="well well-sm">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h4>{{}}</h4>
+                            <h4>{{results.activeQuestion+1 + ". "+results.DataService.quizQuestions[results.activeQuestion.text]}}</h4>
+                            <div class="row">
+                                <div class="col-sm-6" ng-repeat="answer in results.DataService.quizQuestions[results.activeQuestion].possibilities">
+                                    <h4 class="answer">
+                                        {{answer.answer}}
+                                    </h4>
+                                
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
