@@ -17,7 +17,6 @@
 				markQuiz: markQuiz,
 				numCorrect: 0
 			};
-
 			// console.log(quizObj, "<<< before return")
 			return quizObj;
 

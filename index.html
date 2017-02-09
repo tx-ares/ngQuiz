@@ -20,7 +20,7 @@
 				</h3>
         </div>
         <!-- The controller can use an alias to better identify which variables are being used.  We can do this by using the "as" syntax. -->
-        <div ng-controller="listCtrl as list" ng-hide="list.quizMetrics.quizActive">
+        <div ng-controller="listCtrl as list" ng-hide="list.quizMetrics.quizActive || list.quizMetrics.resultsActive">
             <!-- Using ng-repeat, we can loop over all our data and "repeat" over each iteration. -->
             <form class="form-inline well well-sm clearfix">
                 <span class="glyphicon glyphicon-search"></span>
@@ -171,9 +171,15 @@
                     </div>
                 </div>
 
-            </div>
+            </div><!--End Question row -->
+        </div><!--End quiz Controller -->
+
+        <div ng-controller="resultsCtrl as results" ng-show="results.quizMetrics.resultsActive">
+            <h1>Prepare for trouble, make it double!!</h1>
         </div>
     </div><!--End Main Container-->
+
+
 
     <!-- Dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
@@ -183,10 +189,11 @@
     <script src="js/app.js" type="text/javascript"></script>
     <script src="js/controllers/list.js" type="text/javascript"></script>
     <script src="js/controllers/quiz.js" type="text/javascript"></script>
+    <script src="js/controllers/results.js" type="text/javascript"></script>
     <script src="factories/quizMetrics.js" type="text/javascript"></script>
     <script src="factories/DataService.js" type="text/javascript"></script>
 
-    <!-- video 17/24 Figure out why page isn't rendering properly.  May need to rewatch 16-->
+    <!-- video 19/24 Figure out why page isn't rendering properly.  May need to rewatch 16-->
 </body>
 
 </html>
