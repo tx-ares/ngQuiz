@@ -8,11 +8,14 @@
 			console.log("DataFactory fired!")
 			var dataObj = {
 				pokeData: pokeData,
-				quizQuestions: quizQuestions
+				quizQuestions: quizQuestions,
+				correctAnswers: correctAnswers
 			};
 			console.log(dataObj, "<<< dataObj!")
 			return dataObj;
 		}
+
+	var correctAnswers = [1 , 2, 3, 0, 2, 0, 3, 2, 0, 3]; //Demo answers 
 
 	var quizQuestions = [
 		{

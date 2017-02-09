@@ -82,7 +82,8 @@
 				numQuestionsAnswered = 0;
 				vm.activeQuestion = 0;
 				quizMetrics.markQuiz();
-				quizMetrics.changeState();
+				quizMetrics.changeState('quiz', false);
+				quizMetrics.changeState('results', false);
 			}
 		}
 

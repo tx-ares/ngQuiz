@@ -25,9 +25,9 @@
 			}
 
 			function activateQuiz() {
-				console.log(quizMetrics.changeState, "<<< quizMetrics")
-				console.log("activateQuiz fired!")
-				quizMetrics.changeState(true);//Start our ng-hide property as false to keep our main control div visible until conditions are met to hide it.
+				// console.log(quizMetrics.changeState, "<<< quizMetrics")
+				// console.log("activateQuiz fired!")
+				quizMetrics.changeState('quiz', true);//Start our ng-hide property as false to keep our main control div visible until conditions are met to hide it.
 			}
 		};
 
