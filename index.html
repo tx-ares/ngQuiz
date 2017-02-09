@@ -134,34 +134,43 @@
                         <!-- By accessing dataService, we will pull the quizQuestions object and display only the active question. -->
 
                         <!-- Using ng-if we will conditionally choose which of the divs to show based on if it's an image question or a text question. -->
-                        <div class="row"
-                            ng-if="quiz.DataService.quizQuestions[quiz.activeQuestion].type === 'text' ">
-                            <div class="col-sm-6" ng-repeat="answer in quiz.DataService.quizQuestions[quiz.activeQuestion].possibilities">
-                                <h4 class="answer"
-                                    ng-class="{bg-info': $index} === quiz.DataService.quizQuestions[quiz.activeQuestion].selected" 
-                                    ng-click="quiz.selectAnswer()">
-                                    <!-- bg-info: $index will give us the number of the current iteration in the ng-repeat loop. With this line, we are specifying logic to add the class 'bg-info' IF the currrent index is equal to the 'selected' property of current active question.  All this so we can give user feedback that their question has been answered. -->
-                                    {{answer.answer}}
-                                </h4>                             
-                            </div>  
-                        </div><!--End row-->
+                            <div class="row"
+                                ng-if="quiz.DataService.quizQuestions[quiz.activeQuestion].type === 'text' ">
+                                <div class="col-sm-6" ng-repeat="answer in quiz.DataService.quizQuestions[quiz.activeQuestion].possibilities">
+                                    <h4 class="answer"
+                                        ng-class="{bg-info': $index} === quiz.DataService.quizQuestions[quiz.activeQuestion].selected" 
+                                        ng-click="quiz.selectAnswer()">
+                                        <!-- bg-info: $index will give us the number of the current iteration in the ng-repeat loop. With this line, we are specifying logic to add the class 'bg-info' IF the currrent index is equal to the 'selected' property of current active question.  All this so we can give user feedback that their question has been answered. -->
+                                        {{answer.answer}}
+                                    </h4>                             
+                                </div>  
+                            </div><!--End row-->
 
-                        <div class="row"
-                            ng-if="quiz.DataService.quizQuestions[quiz.activeQuestion].type === 'image' ">
-                            <div class="col-sm-6" ng-repeat="answer in quiz.DataService.quizQuestions[quiz.activeQuestion].possibilities">
-                                <div class="image-answer"
-                                     ng-class="{'image-selected' : $index === quiz.DataService.quizQuestions[quiz.activeQuestion].selected}"
-                                     ng-click="quiz.selectAnswer($index)">
-                                    <img ng-src="{{answer.answer}}" />
+                            <div class="row"
+                                ng-if="quiz.DataService.quizQuestions[quiz.activeQuestion].type === 'image' ">
+                                <div class="col-sm-6" ng-repeat="answer in quiz.DataService.quizQuestions[quiz.activeQuestion].possibilities">
+                                    <div class="image-answer"
+                                         ng-class="{'image-selected' : $index === quiz.DataService.quizQuestions[quiz.activeQuestion].selected}"
+                                         ng-click="quiz.selectAnswer($index)">
+                                        <img ng-src="{{answer.answer}}" />
+                                    </div>
                                 </div>
-                            </div>
-                        </div> <!--End row-->
-                        
-                    </div><!--End col -->
+                            </div> <!--End row-->
+                            
+                        </div><!--End col -->
+                    </div>
+                    <button class="btn btn-warning" ng-click="quiz.questionAnswered()">Continue</button>
                 </div>
+                <div class="well well-sm" ng-show="quiz.finalize">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Are you sure you want to submit your answers?</h3>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
-        <button class="btn btn-warning" ng-click="quiz.questionAnswered()">Continue</button>
     </div><!--End Main Container-->
 
     <!-- Dependencies -->
