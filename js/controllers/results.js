@@ -11,6 +11,7 @@
 
 			vm.quizMetrics = quizMetrics;
 			vm.DataService = DataService;
+			vm.activeQuestion = 0;
 		}
 
 })();
