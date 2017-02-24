@@ -206,7 +206,7 @@
             <div class="row">
                 <div class="col-xs-12 top-buffer">
                     <h2>You Scored {{results.quizMetrics.numCorrect}} / {{results.DataService.quizQuestions.length}}</h2>
-                    <h2><strong>{{results.calculatePerc}}%</strong></h2> <!--Angular has helper functions to calculate integers into percentages.-->
+                    <h2><strong>{{results.calculatePerc() | number:2}}%</strong></h2> <!--We will build a helper function to calculate integers into percentages.  Using Angular's filters, we can filter any extra decimal places.-->
                 </div>
             </div>
 

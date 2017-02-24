@@ -13,7 +13,12 @@
 			vm.DataService = DataService;
 			vm.getAnswerClass = getAnswerClass;
 			vm.setActiveQuestion = setActiveQuestion;
+			vm.calculatePerc = calculatePerc;
 			vm.activeQuestion = 0;
+
+			function calculatePerc(){
+				return quizMetrics.numCorrect / DataService.quizQuestions.length * 100
+			}
 
 			function setActiveQuestion(index){//A simple purpose of this function is to set active question to the index during the ng-repeat loop.
 				vm.activeQuestion = index;
