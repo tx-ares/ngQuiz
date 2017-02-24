@@ -13,6 +13,7 @@
 			vm.DataService = DataService;
 			vm.getAnswerClass = getAnswerClass;
 			vm.setActiveQuestion = setActiveQuestion;
+			vm.reset = reset;
 			vm.calculatePerc = calculatePerc;
 			vm.activeQuestion = 0;
 
@@ -29,6 +30,18 @@
 					return "bg-success";
 				}else if(index === DataService.quizQuestions[vm.activeQuestion].selected){
 					return "bg-danger";
+				}
+			}
+
+			function reset() {//This will reset all flags for each question to their default null values, getting it ready for the next pokemaster!
+				quizMetrics.changeState("results", false);
+				quizMetrics.numCorrect = 0;
+
+				for(var i = 0; i < DataService.quizQuestions.length; i++){
+					var data = DataService.quizQuestions[i];
+
+					data.selected = null;
+					data.correct = null;
 				}
 			}
 		}
