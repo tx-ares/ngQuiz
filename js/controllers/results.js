@@ -12,7 +12,12 @@
 			vm.quizMetrics = quizMetrics;
 			vm.DataService = DataService;
 			vm.getAnswerClass = getAnswerClass;
+			vm.setActiveQuestion = setActiveQuestion;
 			vm.activeQuestion = 0;
+
+			function setActiveQuestion(index){//A simple purpose of this function is to set active question to the index during the ng-repeat loop.
+				vm.activeQuestion = index;
+			}
 
 			function getAnswerClass(index){ //Check the index that is passed through is equal to the correct answer.  Correct answers is stored on quizMetrics service.
 				if(index === quizMetrics.correctAnswers[vm.activeQuestion]){

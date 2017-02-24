@@ -204,6 +204,13 @@
             </div><!--End Results Row -->
 
             <div class="row">
+                <div class="col-xs-12 top-buffer">
+                    <h2>You Scored {{results.quizMetrics.numCorrect}} / {{results.DataService.quizQuestions.length}}</h2>
+                    <h2><strong>{{results.calculatePerc}}%</strong></h2> <!--Angular has helper functions to calculate integers into percentages.-->
+                </div>
+            </div>
+
+            <div class="row">
                 <h3>Questions:</h3>
                 <div class="well well-sm">
                     <div class="row">
