@@ -34,3 +34,11 @@
 	box-shadow: 3px 3px 3px 3px solid;
 	transition: 1s all ease;
 }
+
+.image-answer.bg-success{
+	border: 3px solid lime;
+}
+
+.image-answer.bg-danger{
+	border: 3px solid tomato;
+}

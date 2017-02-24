@@ -216,7 +216,8 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <h4>{{results.activeQuestion+1 + ". "+results.DataService.quizQuestions[results.activeQuestion.text]}}</h4>
-                            <div class="row">
+                            <div class="row" 
+                                 ng-if="results.DataService.quizQuestions[results.activeQuestion].type === 'text'">
                                 <div class="col-sm-6" ng-repeat="answer in results.DataService.quizQuestions[results.activeQuestion].possibilities">
                                     <h4 class="answer" ng-class="results.getAnswerClass($index)">
                                         {{answer.answer}}
@@ -224,6 +225,17 @@
                                         <p class="pull-right" ng-show="$index === results.quizMetrics.correctAnswers[results.activeQuestion]">Correct Answer</p>
                                     </h4>
                                 
+                                </div>
+                            </div><!-- End Row -->
+
+                            <div class="row" 
+                                 ng-if="results.DataService.quizQuestions[results.activeQuestion].type === 'image'">
+                                <div class="col-sm-6" ng-repeat="answer in results.DataService.quizQuestions[results.activeQuestion].possibilities">
+                                    <div class="image-answer"
+                                         ng-class="results.getAnswerClass($index)">
+                                         <img ng-src="{{answer.answer}}">
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
