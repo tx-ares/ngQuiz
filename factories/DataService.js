@@ -2,16 +2,16 @@
 
 	angular
 		.module("PokemonFacts")
-		.factory("DataService" , DataFactory);
+		.factory("DataService" , DataService);
 
-		function DataFactory() {
+		function DataService() {
 			console.log("DataFactory fired!")
 			var dataObj = {
 				pokeData: pokeData,
 				quizQuestions: quizQuestions,
 				correctAnswers: correctAnswers
 			};
-			console.log(dataObj, "<<< dataObj!")
+			// console.log(dataObj, "<<< dataObj!")
 			return dataObj;
 		}
 
