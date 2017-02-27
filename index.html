@@ -135,7 +135,7 @@
                             <!-- Using ng-if we will conditionally choose which of the divs to show based on if it's an image question or a text question. -->
                             <div class="row" ng-if="quiz.dataService.quizQuestions[quiz.activeQuestion].type === 'text' ">
                                 <div class="col-sm-6" ng-repeat="answer in quiz.dataService.quizQuestions[quiz.activeQuestion].possibilities">
-                                    <h4 class="answer" ng-class="{bg-info': $index} === quiz.dataService.quizQuestions[quiz.activeQuestion].selected" ng-click="quiz.selectAnswer()">
+                                    <h4 class="answer" ng-class="{'bg-info': $index} === quiz.dataService.quizQuestions[quiz.activeQuestion].selected" ng-click="quiz.selectAnswer()">
                                         <!-- bg-info: $index will give us the number of the current iteration in the ng-repeat loop. With this line, we are specifying logic to add the class 'bg-info' IF the currrent index is equal to the 'selected' property of current active question.  All this so we can give user feedback that their question has been answered. -->
                                         {{answer.answer}}
                                     </h4>
@@ -174,7 +174,7 @@
                     <h2>Results:</h2>
                     <div class="btn-toolbar">
                         <button class="btn" ng-repeat="question in results.dataService.quizQuestions" ng-class="{'btn-success': question.correct, 'btn-danger': !question.correct}" ng-click="results.setActiveQuestion($index)">
-                            <span class="glyphicon" ng-class="{'glyphicon-ok: question.correct, 'glyphicon-remove': !question.correct}"></span>
+                            <span class="glyphicon" ng-class="{'glyphicon-ok': question.correct, 'glyphicon-remove': !question.correct}"></span>
                         </button>
                     </div>
                 </div>
@@ -246,8 +246,8 @@
     <script src="js/controllers/list.js" type="text/javascript"></script>
     <script src="js/controllers/quiz.js" type="text/javascript"></script>
     <script src="js/controllers/results.js" type="text/javascript"></script>
-    <script src="factories/quizMetrics.js" type="text/javascript"></script>
-    <script src="factories/DataService.js" type="text/javascript"></script>
+    <script src="js/factories/quizMetrics.js" type="text/javascript"></script>
+    <script src="js/factories/dataService.js" type="text/javascript"></script>
 </body>
 
 </html>

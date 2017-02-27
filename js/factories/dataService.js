@@ -2,10 +2,10 @@
 
 	angular
 		.module("PokemonFacts")
-		.factory("DataService" , DataService);
+		.factory("DataService", DataService);
 
 		function DataService() {
-			console.log("DataFactory fired!")
+			// console.log("DataFactory fired!")
 			var dataObj = {
 				pokeData: pokeData,
 				quizQuestions: quizQuestions,
@@ -130,5 +130,5 @@
 			type: "Normal",
 		}
 
-	]
+	];
 })();

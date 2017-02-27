@@ -1,8 +1,8 @@
 (function() {
 
     angular
-        .module("PokemonFacts");
-    .controller("quizCtrl", QuizController);
+        .module("PokemonFacts")
+    	.controller("quizCtrl", QuizController);
     // .controller("quizCtrl", ['$injector', QuizController]);
 
     QuizController.$inject = ['quizMetrics', 'DataService']; //Injecting the outputted quizMetrics object from the quizMetrics factory.
@@ -54,7 +54,7 @@
 
             numQuestionsAnswered = 0;
 
-            for (var x = 0 x < quizLength; x++) {
+            for (var x = 0; x < quizLength; x++) {
                 if (DataService.quizQuestions[vm.activeQuestion].selected !== null) {
                     numQuestionsAnswered++; //
                     if (numQuestionsAnswered >= quizLength) { // if we have run out of questions , this function will run.  Which finishes the quiz.
