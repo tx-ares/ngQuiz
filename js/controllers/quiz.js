@@ -54,23 +54,23 @@
 
             numQuestionsAnswered = 0;
 
-            for(var x = 0 x < quizLength; x++){
-	            if (DataService.quizQuestions[vm.activeQuestion].selected !== null) {
-	                numQuestionsAnswered++; //
-	                if (numQuestionsAnswered >= quizLength) { // if we have run out of questions , this function will run.  Which finishes the quiz.
-	                    //finalize quiz
-	                    for (var i = 0; i < quizLength; i++) { //To make sure all questions are actually answered.
-	                        if (DataService.quizQuestions[i].selected === null) {
-	                            setActiveQuestion(i);
-	                            return;
-	                        }
-	                    }
-	                    vm.error = false;
-	                    vm.finalize = true;
-	                    return;
+            for (var x = 0 x < quizLength; x++) {
+                if (DataService.quizQuestions[vm.activeQuestion].selected !== null) {
+                    numQuestionsAnswered++; //
+                    if (numQuestionsAnswered >= quizLength) { // if we have run out of questions , this function will run.  Which finishes the quiz.
+                        //finalize quiz
+                        for (var i = 0; i < quizLength; i++) { //To make sure all questions are actually answered.
+                            if (DataService.quizQuestions[i].selected === null) {
+                                setActiveQuestion(i);
+                                return;
+                            }
+                        }
+                        vm.error = false;
+                        vm.finalize = true;
+                        return;
+                    }
                 }
             }
-        }
 
             vm.setActiveQuestion();
         }
